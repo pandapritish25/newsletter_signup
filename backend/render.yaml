@@ -1,0 +1,14 @@
+version: 1
+build:
+  steps:
+    - name: Install dependencies
+      shell: bash
+      command: npm ci
+
+deploy:
+  steps:
+    - name: Deploy to Render
+      shell: bash
+      command: |
+        npm run build  # If you have a build step
+        npm run dev     # Start your Node.js application
