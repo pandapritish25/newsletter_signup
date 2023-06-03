@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({extended:true})); // used to parse the input info
 
 
 app.get('/',(req,res)=>{
-    res.sendFile(__dirname+'/signup.html');
+    res.sendFile(__dirname+'../frontend/signup.html');
 });
 
 
@@ -62,10 +62,10 @@ app.post('/',(req,res)=>{
     // storing the result of the below function in the request variable
     const request = https.request(url, options, (response)=>{
         if(response.statusCode === 200){
-            res.sendFile(__dirname+'/success.html');
+            res.sendFile(__dirname+'../frontend/success.html');
         }
         else{
-            res.sendFile(__dirname+'/failure.html');
+            res.sendFile(__dirname+'../frontend/failure.html');
         }
 
         response.on("data",(data)=>{
